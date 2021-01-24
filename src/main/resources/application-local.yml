@@ -1,0 +1,25 @@
+#port to run apache on
+server:
+  port: 8080
+
+#Healthchecks
+management:
+  server:
+    port: 8182
+  endpoints.web:
+    base-path: /
+    exposure.include: health, metrics
+  endpoint.health.show-details: always
+
+spring.environment: DEV
+
+logback.fluent: false
+logstash.url: 172.19.45.68:5052
+
+spring:
+  autoconfigure:
+    exclude=org:
+      springframework:
+        boot:
+          autoconfigure:
+            jdbc:
