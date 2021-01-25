@@ -12,6 +12,11 @@ import java.util.stream.IntStream;
 @Component
 public class Decoder {
 
+    /**
+     * Decodes the message based on a list of strings
+     * @param messages - list of messages recieved
+     * @return - String - Decoded message
+     */
     public static String decodeMessage(List<List<String>> messages) {
         List<String> finalMessage = new ArrayList<>();
         AtomicBoolean possibleEndOfMessage = new AtomicBoolean(false);
@@ -21,7 +26,7 @@ public class Decoder {
 
         IntStream
                 .range(0, smallestSize)
-                .forEach(idx ->{
+                .forEach(idx -> {
                     List<String> words = messages.stream().map(m -> m.get(idx)).collect(Collectors.toList());
                     String possibleWord = possibleWord(words);
                     if (possibleEndOfMessage.get() && !possibleWord.isEmpty()) {
@@ -34,12 +39,17 @@ public class Decoder {
                     }
                 });
 
-        return finalMessage.contains(null) ? null :String.join(" ", Lists.reverse(finalMessage));
+        return finalMessage.contains(null) ? null : String.join(" ", Lists.reverse(finalMessage));
     }
 
+    /**
+     * Validates a possible word removing duplicates and checking if two words dont match
+     * @param words - three words from each list from each satellite
+     * @return - The possible word for the decoded message
+     */
     private static String possibleWord(List<String> words) {
         words.remove("");
         Set<String> set = new HashSet<>(words);
-        return set.size() > 1 ? null : (set.size()==1? set.iterator().next(): null);
+        return set.size() > 1 ? null : (set.size() == 1 ? set.iterator().next() : null);
     }
 }

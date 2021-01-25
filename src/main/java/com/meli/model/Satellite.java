@@ -8,7 +8,7 @@ import java.util.Objects;
 
 @AllArgsConstructor
 @Getter
-public class Satelite {
+public class Satellite {
 
     private String name;
     private double distance;
@@ -19,8 +19,8 @@ public class Satelite {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Satelite satelite = (Satelite) o;
-        return Objects.equals(name, satelite.name);
+        Satellite satellite = (Satellite) o;
+        return Objects.equals(name, satellite.name);
     }
 
     @Override

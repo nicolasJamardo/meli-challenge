@@ -8,7 +8,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @Getter
-public class SateliteDto {
+public class SatelliteDto {
 
     @JsonProperty("name")
     String name;
