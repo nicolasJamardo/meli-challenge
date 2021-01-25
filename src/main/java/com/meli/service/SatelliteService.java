@@ -31,6 +31,7 @@ public class SatelliteService {
 
     /**
      * Calculates the location of the ship based in the distance to the satellites and decodes the recieved meesage
+     *
      * @param requestDto - a list of satellites with their specific name, distance to the ship and message recieved
      * @return MessageLocationResponseDto - the location of the ship and the decoded message
      */
@@ -51,6 +52,7 @@ public class SatelliteService {
 
     /**
      * Calculates the location of the ship based in the distance to the previously stored satellites and decodes the recieved meesage
+     *
      * @return MessageLocationResponseDto - the location of the ship and the decoded message
      */
     public MessageLocationResponseDto getLocationMessage() {
@@ -69,6 +71,7 @@ public class SatelliteService {
 
     /**
      * Adds a satellite to the list
+     *
      * @param satelliteDto - the information of the satellite
      */
     public void addSatellite(SatelliteDto satelliteDto) {
@@ -81,6 +84,7 @@ public class SatelliteService {
 
     /**
      * Calculates the location of the ship based on a set of satellites
+     *
      * @param satellites - a set of satellites
      * @return - Location - the ship's location
      */
@@ -95,6 +99,7 @@ public class SatelliteService {
 
     /**
      * Decodes the message based on three recieved messages
+     *
      * @param messages - List of messages recieved from each satellite
      * @return String - The decoded message
      */

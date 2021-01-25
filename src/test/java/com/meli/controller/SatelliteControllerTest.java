@@ -66,7 +66,6 @@ public class SatelliteControllerTest {
     }
 
 
-
     private MessageLocationRequestDto getValidMessageLocationRequestDto() {
         MessageLocationRequestDto requestDto = new MessageLocationRequestDto();
         List<SatelliteDto> satelliteDtoList = new ArrayList<>();

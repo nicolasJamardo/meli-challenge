@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-import static org.springframework.http.ResponseEntity.notFound;
 import static org.springframework.http.ResponseEntity.ok;
 
 @Api(tags = "satellite", description = "Satellite related operations")
@@ -34,6 +33,7 @@ public class SatelliteController {
 
     /**
      * Calculates the location and decoded message from a ship that was sent to three specific satellites
+     *
      * @param requestDto - a list of satellites with their specific name, distance to the ship and message recieved
      * @return MessageLocationResponseDto - the location of the ship and the decoded message
      */
@@ -52,7 +52,8 @@ public class SatelliteController {
 
     /**
      * Adds one specific satellite
-     * @param satelliteName - the name of the satellite being added
+     *
+     * @param satelliteName      - the name of the satellite being added
      * @param recievedMessageDto - the message recieved by the satellite
      * @return not found in case the satellite was correctly added
      */
@@ -63,7 +64,7 @@ public class SatelliteController {
             @ApiResponse(message = "Not found", code = 404)
     })
     public ResponseEntity<?> addSatellite(@PathVariable("satellite_name") String satelliteName,
-                                         @RequestBody @Valid RecievedMessageDto recievedMessageDto) {
+                                          @RequestBody @Valid RecievedMessageDto recievedMessageDto) {
         LOGGER.trace("addSatellite - adds the satellite called = [{}}", satelliteName);
 
         satelliteService.addSatellite(new SatelliteDto(satelliteName, recievedMessageDto.getDistance(), recievedMessageDto.getMessage()));
@@ -72,6 +73,7 @@ public class SatelliteController {
 
     /**
      * Gets the location of the ship and the decoded message calculated from the previously stored satellites
+     *
      * @return messageLocationResponseDto - the location of the ship and the decoded message
      */
     @RequestMapping(method = RequestMethod.GET, value = "/topsecret_split")

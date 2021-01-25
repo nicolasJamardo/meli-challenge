@@ -14,6 +14,7 @@ public class Decoder {
 
     /**
      * Decodes the message based on a list of strings
+     *
      * @param messages - list of messages recieved
      * @return - String - Decoded message
      */
@@ -44,6 +45,7 @@ public class Decoder {
 
     /**
      * Validates a possible word removing duplicates and checking if two words dont match
+     *
      * @param words - three words from each list from each satellite
      * @return - The possible word for the decoded message
      */

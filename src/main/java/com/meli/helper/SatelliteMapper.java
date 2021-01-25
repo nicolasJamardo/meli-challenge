@@ -22,6 +22,7 @@ public class SatelliteMapper {
 
     /**
      * Maps a satelliteDto into a Satellite
+     *
      * @param satelliteDto
      * @return Satellite
      */
@@ -34,6 +35,7 @@ public class SatelliteMapper {
 
     /**
      * Maps a list of satellitesDtos to a set of Satellites
+     *
      * @param satelliteDtos
      * @return Set of satellites
      */
@@ -45,6 +47,7 @@ public class SatelliteMapper {
 
     /**
      * Valides if the name of the satellite recieved is valid
+     *
      * @param name
      * @return boolean
      */

@@ -15,6 +15,7 @@ public class Triangulate {
 
     /**
      * Triangulates the distance of the ship based on the location of the satellites and their location to the ship
+     *
      * @param satelliteSet
      * @return Location
      */
